@@ -19,6 +19,9 @@ Papers, codes and resources on Robot Learning fromDemonstration (RLfD)
 ### Active learning
 * [Interactive Policy Learning through Confidence-Based Autonomy](http://www.cs.cmu.edu/~mmv/papers/09jair-cba.pdf)
 
+### Reward shaping
+* [Policy invariance under reward transformations: theory and application to reward shaping](https://people.eecs.berkeley.edu/~pabbeel/cs287-fa09/readings/NgHaradaRussell-shaping-ICML1999.pdf), ICML 1999
+* [Reinforcement Learning from Demonstration through Shaping](https://ijcai.org/Proceedings/15/Papers/472.pdf), IJCAI 2015
 
 ## Codes
 
