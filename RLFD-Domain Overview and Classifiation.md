@@ -1,8 +1,9 @@
 # Robot Learning From Demonstration: Domain Overview and Classification
+
 * Author: Ziming Chen
 * Created: 2018-08-06
 * Updated: 2018-08-07
----
+
 Overview of the field and detailed classification of related paper in the corresponding repository.
 
 ### Domain overview
@@ -19,7 +20,21 @@ Overview of the field and detailed classification of related paper in the corres
 * [Robot programming by Demonstration](https://infoscience.epfl.ch/record/114050/files/chapter5_9.pdf)
 
   Billard, Aude, et al. "Robot programming by demonstration." Springer handbook of robotics. Springer, Berlin, Heidelberg, 2008. 1371-1394.  
+  
+### Reward shaping
 
+* [Policy invariance under reward transformations: theory and application to reward shaping](https://people.eecs.berkeley.edu/%7Epabbeel/cs287-fa09/readings/NgHaradaRussell-shaping-ICML1999.pdf)
+
+    Ng, Andrew Y., Daishi Harada, and Stuart Russell. "Policy invariance under reward transformations: Theory and application to reward shaping." ICML. Vol. 99. 1999.
+    
+* [Reinforcement Learning from Demonstration through Shaping](https://ijcai.org/Proceedings/15/Papers/472.pdf)
+
+    Brys, Tim, et al. "Reinforcement Learning from Demonstration through Shaping." IJCAI. 2015.
+    
+* [Introspective Reinforcement Learning and Learning from Demonstration](http://ala2018.it.nuigalway.ie/papers/ALA_2018_paper_5.pdf) ***
+ 
+    Li, Mao, Tim Brys, and Daniel Kudenko. "Introspective Reinforcement Learning and Learning from Demonstration." Proceedings of the 17th International Conference on Autonomous Agents and MultiAgent Systems. International Foundation for Autonomous Agents and Multiagent Systems, 2018.
+    
 ### Trajectory imitation
 
 * [Learning and generalization of motor skills by learning from demonstration](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F15/papers/Pastor09.pdf)
@@ -95,8 +110,13 @@ Overview of the field and detailed classification of related paper in the corres
 * [Bayesian inverse reinforcement learning](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/papers/BayesIRL.pdf)
     
     Deepak Ramachandran and Eyal Amir.
-    International Joint Conference on Artificial Intelligence, 2007\.
+    International Joint Conference on Artificial Intelligence, 2007.
+    
+* [Algorithms for inverse reinforcement learning](http://ai.stanford.edu/~ang/papers/icml00-irl.pdf)
 
+    Ng, Andrew Y., and Stuart J. Russell. 
+    ICML, 2000.
+    
 ### Inverse reinforcement learning II  
 
 * [Maximum entropy inverse reinforcement learning](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/papers/Ziebart08.pdf)
@@ -192,6 +212,10 @@ Overview of the field and detailed classification of related paper in the corres
     
     Maya Cakmak and Andrea L. Thomaz.
     ACM/IEEE International Conference on Human-Robot Interaction, 2012\.
+    
+* [Active Learning for Reward Estimation in Inverse Reinforcement Learning](http://robotcub.org/misc/papers/09_Lopes_Melo_etal_ecml.pdf) ***
+
+    Lopes, Manuel, Francisco Melo, and Luis Montesano. "Active learning for reward estimation in inverse reinforcement learning." Joint European Conference on Machine Learning and Knowledge Discovery in Databases. Springer, Berlin, Heidelberg, 2009.
 
 ### Active learning II / Information gathering actions I
 
@@ -203,7 +227,7 @@ Overview of the field and detailed classification of related paper in the corres
 
   Dorsa Sadigh, et al. "Information gathering actions over human internal state." Intelligent Robots and Systems (IROS), 2016 IEEE/RSJ International Conference on. IEEE, 2016.
 
-* [Active Preference-Based Learning of Reward Functions](https://dorsa.fyi/publications/sadigh2017active.pdf)
+* [Active Preference-Based Learning of Reward Functions](https://dorsa.fyi/publications/sadigh2017active.pdf) ***
 
   Dorsa Sadigh, Anca D. Dragan, Shankar Sastry, and Sanjit A. Seshia. "Active preference-based learning of reward functions." Robotics: Science and Systems (RSS). 2017.
   
@@ -295,6 +319,17 @@ Overview of the field and detailed classification of related paper in the corres
     Stefanos Nikolaidis and Julie Shah.
     ACM/IEEE International Conference on Human-Robot Interaction, 2013\.
 
+* [Leveraging Social Networks to Motivate Humans to Train Agents](http://delivery.acm.org/10.1145/2620000/2616067/p1571-li.pdf?ip=175.159.124.168&id=2616067&acc=ACTIVE%20SERVICE&key=CDD1E79C27AC4E65%2EFC30B8D6EF32B758%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1533721682_57bc5510c950f3fe1fb809de1bfe0f3b) ***
+
+    Li, Guangliang, et al. "Leveraging social networks to motivate humans to train agents." Proceedings of the 2014 international conference on autonomous agents and multi-agent systems. International Foundation for Autonomous Agents and Multiagent Systems, 2014.
+    
+* [Using Informative Behavior to Increase Engagement in the TAMER Framework](http://bradknox.net/public/papers/aamas13-li.pdf) ***
+
+    Li, Guangliang, et al. "Using informative behavior to increase engagement in the tamer framework." Proceedings of the 2013 international conference on Autonomous agents and multi-agent systems. International Foundation for Autonomous Agents and Multiagent Systems, 2013.
+
+* [Social interaction for efficient agent learning from human reward](https://link.springer.com/article/10.1007/s10458-017-9374-8) ***
+    
+    Li, Guangliang, et al. "Social interaction for efficient agent learning from human reward." Autonomous Agents and Multi-Agent Systems 32.1 (2018): 1-25.
 ### Human factors II
 
 *   [Trust calibration within a human-robot team: Comparing automatically generated explanations](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/papers/Trust.pdf)
