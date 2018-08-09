@@ -21,6 +21,10 @@ Overview of the field and detailed classification of related paper in the corres
 
   Billard, Aude, et al. "Robot programming by demonstration." Springer handbook of robotics. Springer, Berlin, Heidelberg, 2008. 1371-1394.  
   
+* [Robot Learning from Human Teachers](https://www.morganclaypool.com/doi/abs/10.2200/S00568ED1V01Y201402AIM028) ***
+
+    Chernova S, Thomaz A L. Robot learning from human teachers[J]. Synthesis Lectures on Artificial Intelligence and Machine Learning, 2014, 8(3): 1-121.
+  
 ### Reward shaping
 
 * [Policy invariance under reward transformations: theory and application to reward shaping](https://people.eecs.berkeley.edu/%7Epabbeel/cs287-fa09/readings/NgHaradaRussell-shaping-ICML1999.pdf)
@@ -34,6 +38,23 @@ Overview of the field and detailed classification of related paper in the corres
 * [Introspective Reinforcement Learning and Learning from Demonstration](http://ala2018.it.nuigalway.ie/papers/ALA_2018_paper_5.pdf) ***
  
     Li, Mao, Tim Brys, and Daniel Kudenko. "Introspective Reinforcement Learning and Learning from Demonstration." Proceedings of the 17th International Conference on Autonomous Agents and MultiAgent Systems. International Foundation for Autonomous Agents and Multiagent Systems, 2018.
+    
+### Transfer Learning
+
+* [A survey on transfer learning](https://www.cse.ust.hk/~qyang/Docs/2009/tkde_transfer_learning.pdf)
+
+    Pan, Sinno Jialin, and Qiang Yang. "A survey on transfer learning." IEEE Transactions on knowledge and data engineering 22.10 (2010): 1345-1359.
+
+* [Transfer learning for reinforcement learning domains: A survey](http://www.jmlr.org/papers/volume10/taylor09a/taylor09a.pdf)
+
+    Taylor, Matthew E., and Peter Stone. "Transfer learning for reinforcement learning domains: A survey." Journal of Machine Learning Research 10.Jul (2009): 1633-1685.
+    
+* [Shaping in reinforcement learning by knowledge transferred from human-demonstrations of a simple similar task](https://content.iospress.com/download/journal-of-intelligent-and-fuzzy-systems/ifs17052?id=journal-of-intelligent-and-fuzzy-systems%2Fifs17052)
+
+    Wang, Guo-Fang, Zhou Fang, and Ping Li. "Shaping in reinforcement learning by knowledge transferred from human-demonstrations of a simple similar task." Journal of Intelligent & Fuzzy Systems 34.1 (2018): 711-720.
+
+
+
     
 ### Trajectory imitation
 
@@ -203,6 +224,10 @@ Overview of the field and detailed classification of related paper in the corres
 
 ### Active learning I
 
+* [Designing Interactions for Robot Active Learners](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5471105) ***
+
+    Cakmak, Maya, Crystal Chao, and Andrea L. Thomaz. "Designing interactions for robot active learners." IEEE Transactions on Autonomous Mental Development 2.2 (2010): 108-118.
+    
 *   [Interactive policy learning through confidence-based autonomy](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/papers/Chernova09.pdf)
     
     Sonia Chernova and Manuela Veloso.
@@ -279,6 +304,13 @@ Overview of the field and detailed classification of related paper in the corres
     W. Bradley Knox, Peter Stone, and Cynthia Breazeal.
     International Conference on Social Robotics, 2013\.
 
+* [Combining Manual Feedback with Subsequent MDP Reward Signals for Reinforcement Learning](http://delivery.acm.org/10.1145/1840000/1838208/p5-knox.pdf?ip=175.159.124.168&id=1838208&acc=ACTIVE%20SERVICE&key=CDD1E79C27AC4E65%2EFC30B8D6EF32B758%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1533819242_38f7d685a0cc2005344deed10fd79d94) ***
+
+    Knox, W. Bradley, and Peter Stone. Proceedings of the 9th International Conference on Autonomous Agents and Multi-agent Systems, 2010.
+    
+* [A Need for Speed: Adapting Agent Action Speed to Improve Task Learning from Non-Expert Humans](http://delivery.acm.org/10.1145/2940000/2937065/p957-peng.pdf?ip=175.159.124.168&id=2937065&acc=ACTIVE%20SERVICE&key=CDD1E79C27AC4E65%2EFC30B8D6EF32B758%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1533717988_fbe25a65c57742d0bbda0483e076d6fd)
+
+    Peng, Bei, et al. "A need for speed: Adapting agent action speed to improve task learning from non-expert humans." Proceedings of the 2016 International Conference on Autonomous Agents & Multiagent Systems. International Foundation for Autonomous Agents and Multiagent Systems, 2016.
 ### Interactive learning II
 
 *   [Learning trajectory preferences for manipulators via iterative improvement](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/papers/Jain13.pdf)
@@ -315,17 +347,22 @@ Overview of the field and detailed classification of related paper in the corres
     Robotics: Science and Systems, 2013\.
 
 *   [Human-robot cross-training: computational formulation, modeling and evaluation of a human team training strategy](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/papers/Nikolaidis13.pdf)
-    
+      
     Stefanos Nikolaidis and Julie Shah.
     ACM/IEEE International Conference on Human-Robot Interaction, 2013\.
+    
+* [Improved human–robot team performance through cross-training, an approach inspired by human team training practices](https://www.ri.cmu.edu/pub_files/2015/11/The-International-Journal-of-Robotics-Research-2015-Nikolaidis-1711-30.pdf)
 
+    Nikolaidis, Stefanos, et al. The International Journal of Robotics Research, 2015
+
+    
 * [Leveraging Social Networks to Motivate Humans to Train Agents](http://delivery.acm.org/10.1145/2620000/2616067/p1571-li.pdf?ip=175.159.124.168&id=2616067&acc=ACTIVE%20SERVICE&key=CDD1E79C27AC4E65%2EFC30B8D6EF32B758%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1533721682_57bc5510c950f3fe1fb809de1bfe0f3b) ***
 
-    Li, Guangliang, et al. "Leveraging social networks to motivate humans to train agents." Proceedings of the 2014 international conference on autonomous agents and multi-agent systems. International Foundation for Autonomous Agents and Multiagent Systems, 2014.
+    Li, Guangliang, et al. Proceedings of the 2014 international conference on autonomous agents and multi-agent systems, 2014.
     
 * [Using Informative Behavior to Increase Engagement in the TAMER Framework](http://bradknox.net/public/papers/aamas13-li.pdf) ***
 
-    Li, Guangliang, et al. "Using informative behavior to increase engagement in the tamer framework." Proceedings of the 2013 international conference on Autonomous agents and multi-agent systems. International Foundation for Autonomous Agents and Multiagent Systems, 2013.
+    Li, Guangliang, et al. Proceedings of the 2013 international conference on Autonomous agents and multi-agent systems, 2013.
 
 * [Social interaction for efficient agent learning from human reward](https://link.springer.com/article/10.1007/s10458-017-9374-8) ***
     
