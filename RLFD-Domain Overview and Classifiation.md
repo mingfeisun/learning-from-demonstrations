@@ -2,7 +2,7 @@
 
 * Author: Ziming Chen
 * Created: 2018-08-06
-* Updated: 2018-08-07
+* Updated: 2018-08-10
 
 Overview of the field and detailed classification of related paper in the corresponding repository.
 
@@ -39,6 +39,10 @@ Overview of the field and detailed classification of related paper in the corres
  
     Li, Mao, Tim Brys, and Daniel Kudenko. "Introspective Reinforcement Learning and Learning from Demonstration." Proceedings of the 17th International Conference on Autonomous Agents and MultiAgent Systems. International Foundation for Autonomous Agents and Multiagent Systems, 2018.
     
+* [Learning from Demonstration for Shaping through Inverse Reinforcement Learning](http://delivery.acm.org/10.1145/2940000/2936988/p429-suay.pdf?ip=175.159.124.168&id=2936988&acc=ACTIVE%20SERVICE&key=CDD1E79C27AC4E65%2EFC30B8D6EF32B758%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1533653137_c97b941806e4a837ff232c73c2f34a6f) ***
+
+    Suay, Halit Bener, et al. "Learning from demonstration for shaping through inverse reinforcement learning." Proceedings of the 2016 International Conference on Autonomous Agents & Multiagent Systems. International Foundation for Autonomous Agents and Multiagent Systems, 2016.    
+    
 ### Transfer Learning
 
 * [A survey on transfer learning](https://www.cse.ust.hk/~qyang/Docs/2009/tkde_transfer_learning.pdf)
@@ -54,8 +58,6 @@ Overview of the field and detailed classification of related paper in the corres
     Wang, Guo-Fang, Zhou Fang, and Ping Li. "Shaping in reinforcement learning by knowledge transferred from human-demonstrations of a simple similar task." Journal of Intelligent & Fuzzy Systems 34.1 (2018): 711-720.
 
 
-
-    
 ### Trajectory imitation
 
 * [Learning and generalization of motor skills by learning from demonstration](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F15/papers/Pastor09.pdf)
@@ -97,6 +99,37 @@ Overview of the field and detailed classification of related paper in the corres
     Jens Kober, J. Andrew Bagnell, and Jan Peters.
     International Journal of Robotics Research, 2013\.
 
+* [Improving Reinforcement Learning with Human Input](http://www.ijcai.org/proceedings/2018/0817.pdf) ***
+
+    Taylor, Matthew E., and A. I. Borealis. "Improving Reinforcement Learning with Human Input." IJCAI. 2018.   
+
+### Deep Reinforcement Learning
+    
+* [Human-level control through deep reinforcement learning
+](http://www.davidqiu.com:8888/research/nature14236.pdf) ***
+
+    Mnih, Volodymyr, et al. "Human-level control through deep reinforcement learning." Nature 518.7540 (2015): 529.
+    
+* [Deep Reinforcement Learning with Double Q-Learning](http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12389/11847) ***
+
+    Van Hasselt, Hado, Arthur Guez, and David Silver. "Deep Reinforcement Learning with Double Q-Learning." AAAI. Vol. 2. 2016.
+    
+* [Deep Q-learning from Demonstrations](https://arxiv.org/pdf/1704.03732.pdf)
+
+    Hester, Todd, et al. "Deep Q-learning from Demonstrations." arXiv preprint arXiv:1704.03732 (2017).
+
+* [Deep Reinforcement Learning from Human Preferences](https://papers.nips.cc/paper/7017-deep-reinforcement-learning-from-human-preferences.pdf) ***
+
+    Christiano, Paul F., et al. "Deep reinforcement learning from human preferences." Advances in Neural Information Processing Systems(NIPS). 2017.
+    
+* [Guided cost learning: Deep inverse optimal control via policy optimization](http://proceedings.mlr.press/v48/finn16.pdf)
+
+    Finn, Chelsea, Sergey Levine, and Pieter Abbeel. "Guided cost learning: Deep inverse optimal control via policy optimization." International Conference on Machine Learning. 2016.
+
+* [Deep reinforcement learning: An overview](https://arxiv.org/pdf/1701.07274.pdf)
+    
+    Li, Yuxi. "Deep reinforcement learning: An overview." arXiv preprint arXiv:1701.07274 (2017).
+    
 ### Policy search I
 
 * [Skill learning and task outcome prediction for manipulation](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/papers/Pastor11.pdf)
@@ -123,6 +156,10 @@ Overview of the field and detailed classification of related paper in the corres
 
 ### Inverse reinforcement learning I
 
+* [Inverse reinforcement learning through structured classification](http://papers.nips.cc/paper/4551-inverse-reinforcement-learning-through-structured-classification.pdf) ***
+
+    Klein, Edouard, et al. "Inverse reinforcement learning through structured classification." Advances in Neural Information Processing Systems(NIPS). 2012.
+
 * [Apprenticeship learning via inverse reinforcement learning](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/papers/Abbeel04.pdf)
  
     Pieter Abbeel and Andrew Y. Ng.
@@ -144,6 +181,10 @@ Overview of the field and detailed classification of related paper in the corres
 
     Ziebart, Brian D., Andrew L. Maas, J. Andrew Bagnell, and Anind K. Dey.
     AAAI Conference on Artificial Intelligence, 2008\.
+
+* [Maximum Entropy Deep Inverse Reinforcement Learning](https://arxiv.org/pdf/1507.04888.pdf) ***
+
+    Wulfmeier, M., Ondruska, P., and Posner, I. Maximum entropy deep inverse reinforcement learning. arXiv preprint arXiv:1507.04888, 2015.
 
 * [Relative Entropy Inverse Reinforcement Learning](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/papers/relent.pdf)
     
@@ -173,6 +214,18 @@ Overview of the field and detailed classification of related paper in the corres
  
     Mike Phillips, Victor Hwang, Sachin Chitta, and Maxim Likhachev.
     Robotics: Science and Systems, 2013\.
+    
+* [Socially Adaptive Path Planning in Human Environments Using Inverse Reinforcement Learning](https://link.springer.com/article/10.1007/s12369-015-0310-2) ***
+
+    Kim, Beomjoon, and Joelle Pineau. "Socially adaptive path planning in human environments using inverse reinforcement learning." International Journal of Social Robotics 8.1 (2016): 51-66.
+
+* [Learning Objective Functions for Manipulation](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6630743)
+
+    Kalakrishnan, Mrinal, et al. "Learning objective functions for manipulation." Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013.
+    
+* [Socially Compliant Mobile Robot Navigation via Inverse Reinforcement Learning](http://www.cs.cmu.edu/~jeanoh/16-785/papers/kretzschmar-ijrr2016-socially.pdf)
+
+    Kretzschmar, Henrik, et al. "Socially compliant mobile robot navigation via inverse reinforcement learning." The International Journal of Robotics Research 35.11 (2016): 1289-1307.
 
 ### Affordance learning
 
@@ -242,6 +295,14 @@ Overview of the field and detailed classification of related paper in the corres
 
     Lopes, Manuel, Francisco Melo, and Luis Montesano. "Active learning for reward estimation in inverse reinforcement learning." Joint European Conference on Machine Learning and Knowledge Discovery in Databases. Springer, Berlin, Heidelberg, 2009.
 
+* [Improving Reinforcement Learning with Confidence-Based Demonstrations](https://pdfs.semanticscholar.org/5851/82e93bc33daacfc7cf52744eae569e180c52.pdf) ***
+
+    Wang, Zhaodong, and Matthew E. Taylor. "Improving reinforcement learning with confidence-based demonstrations." Proceedings of the 26th International Conference on Artificial Intelligence (IJCAI). 2017.
+    
+* [Interactive Reinforcement Learning with Dynamic Reuse of Prior Knowledge from Human/Agent's Demonstration](https://arxiv.org/pdf/1805.04493.pdf) **[optional]**
+
+    Wang, Zhaodong, and Matthew E. Taylor. "Interactive Reinforcement Learning with Dynamic Reuse of Prior Knowledge from Human/Agent's Demonstration." arXiv preprint arXiv:1805.04493 (2018).
+    
 ### Active learning II / Information gathering actions I
 
 * [Active reward learning](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/papers/ActiveReward.pdf)
@@ -308,9 +369,14 @@ Overview of the field and detailed classification of related paper in the corres
 
     Knox, W. Bradley, and Peter Stone. Proceedings of the 9th International Conference on Autonomous Agents and Multi-agent Systems, 2010.
     
-* [A Need for Speed: Adapting Agent Action Speed to Improve Task Learning from Non-Expert Humans](http://delivery.acm.org/10.1145/2940000/2937065/p957-peng.pdf?ip=175.159.124.168&id=2937065&acc=ACTIVE%20SERVICE&key=CDD1E79C27AC4E65%2EFC30B8D6EF32B758%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1533717988_fbe25a65c57742d0bbda0483e076d6fd)
+* [A Need for Speed: Adapting Agent Action Speed to Improve Task Learning from Non-Expert Humans](http://delivery.acm.org/10.1145/2940000/2937065/p957-peng.pdf?ip=175.159.124.168&id=2937065&acc=ACTIVE%20SERVICE&key=CDD1E79C27AC4E65%2EFC30B8D6EF32B758%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1533717988_fbe25a65c57742d0bbda0483e076d6fd) ***
 
     Peng, Bei, et al. "A need for speed: Adapting agent action speed to improve task learning from non-expert humans." Proceedings of the 2016 International Conference on Autonomous Agents & Multiagent Systems. International Foundation for Autonomous Agents and Multiagent Systems, 2016.
+    
+* [Framing reinforcement learning from human reward: Reward positivity, temporal discounting, episodicity, and performance](http://www.dtic.mil/get-tr-doc/pdf?AD=ADA627123)
+
+    Knox, W. Bradley, and Peter Stone. "Framing reinforcement learning from human reward: Reward positivity, temporal discounting, episodicity, and performance." Artificial Intelligence, 2015.
+    
 ### Interactive learning II
 
 *   [Learning trajectory preferences for manipulators via iterative improvement](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/papers/Jain13.pdf)
@@ -346,12 +412,12 @@ Overview of the field and detailed classification of related paper in the corres
     Anca Dragan and Siddhartha Srinivasa.
     Robotics: Science and Systems, 2013\.
 
-*   [Human-robot cross-training: computational formulation, modeling and evaluation of a human team training strategy](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/papers/Nikolaidis13.pdf)
+*   [Human-robot cross-training: computational formulation, modeling and evaluation of a human team training strategy](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/papers/Nikolaidis13.pdf) ***
       
     Stefanos Nikolaidis and Julie Shah.
     ACM/IEEE International Conference on Human-Robot Interaction, 2013\.
     
-* [Improved human–robot team performance through cross-training, an approach inspired by human team training practices](https://www.ri.cmu.edu/pub_files/2015/11/The-International-Journal-of-Robotics-Research-2015-Nikolaidis-1711-30.pdf)
+* [Improved human–robot team performance through cross-training, an approach inspired by human team training practices](https://www.ri.cmu.edu/pub_files/2015/11/The-International-Journal-of-Robotics-Research-2015-Nikolaidis-1711-30.pdf) ***
 
     Nikolaidis, Stefanos, et al. The International Journal of Robotics Research, 2015
 
@@ -367,6 +433,7 @@ Overview of the field and detailed classification of related paper in the corres
 * [Social interaction for efficient agent learning from human reward](https://link.springer.com/article/10.1007/s10458-017-9374-8) ***
     
     Li, Guangliang, et al. "Social interaction for efficient agent learning from human reward." Autonomous Agents and Multi-Agent Systems 32.1 (2018): 1-25.
+    
 ### Human factors II
 
 *   [Trust calibration within a human-robot team: Comparing automatically generated explanations](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/papers/Trust.pdf)
