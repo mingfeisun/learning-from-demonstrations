@@ -159,19 +159,21 @@ class QLearningTest:
                 curr_state = next_state[-1]     # 切换到下一状态
                 count_actions = count_actions + 1   # 计算总共花费的actions（也可以用cumulative reward？跟游戏本身规则相关）
 
+                # self.visualization(next_state)    # 实时可视化每一次探索的状况
             iterations.append(i)
             performances.append(count_actions)
 
             print("Reach goal!! Actions taken:" + str(count_actions))
             print("Trajectory: " + str(next_state))
 
-        self.visualization(next_state)
+        self.visualization(next_state)  # 实时可视化每一轮成功探索后的状况
 
 
     def visualization(self, trajectory_state):
-        visual = QLearningVisual(self.learning_model.q_table, self.iterations, self.performances)
-        #visual.visual_iter_process()
-        visual.draw_heatmap(trajectory_state)
+        vis = QLearningVisual(self.learning_model.q_table, self.iterations, self.performances)
+        vis.visual_iter_process()
+        vis.visual_heatmap(trajectory_state)
+        vis.visual_state_action(self.learning_model.q_table)
 
 
 test = QLearningTest()
