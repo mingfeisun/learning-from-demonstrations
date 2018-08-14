@@ -25,6 +25,8 @@ Papers, codes and resources on Robot Learning fromDemonstration (RLfD)
 
 ## Codes
 
+### Reinforcement Learning
+* [Implementation of Reinforcement Learning Algorithms](https://github.com/dennybritz/reinforcement-learning)
 
 
 ## Other resources
