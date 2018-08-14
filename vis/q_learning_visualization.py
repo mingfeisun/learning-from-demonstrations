@@ -1,6 +1,6 @@
-#coding=utf8
-#Author: Ziming Chen
-#Beginning Date: 2018/08/01
+# coding=utf8
+# Author: Ziming Chen
+# Beginning Date: 2018/08/01
 # -*- coding: utf-8 -*-
 
 import numpy as np
@@ -29,7 +29,7 @@ class QLearningVisual:
             transfer it to the final q_table list, which is a 2-dimensional matrix,
             with each value the maximal q_value of the corresponding state"""
 
-        # print(q_table_dict)
+        print(q_table_dict)
 
         keys = sorted(q_table_dict.keys())
         # print(keys)
@@ -60,9 +60,11 @@ class QLearningVisual:
         # print(q_table_dict[99])
         return list
 
-    def draw_heatmap(self, trajectory_state):
+    def visual_heatmap(self, trajectory_state):
 
         list = self.final_q_table
+        xpos = np.arange(0, 10, 1)
+        ypos = np.arange(0, 10, 1)
 
         # generate colors
         cm = plt.get_cmap('bwr')
@@ -133,10 +135,10 @@ class QLearningVisual:
 
         # figure=plt.figure(facecolor='w')
         # ax=figure.add_subplot(2, 1, 1, position=[1, 1, 1, 1])
-        # ax.set_yticks(range(len(ylabels)))
-        # ax.set_yticklabels(ylabels)
-        # ax.set_xticks(range(len(xlabels)))
-        # ax.set_xticklabels(xlabels)
+        # ax.set_yticks(range(len(ypos)))
+        # ax.set_yticklabels(ypos)
+        # ax.set_xticks(range(len(xpos)))
+        # ax.set_xticklabels(xpos)
         # vmax=list[0][0]
         # vmin=list[0][0]
         # for i in list:
@@ -146,7 +148,7 @@ class QLearningVisual:
         #         if j<vmin:
         #             vmin=j
         # map = ax.imshow(list,interpolation='nearest', cmap=cm.Blues, aspect='auto',vmin=vmin,vmax=vmax)
-        # plt.colorbar(mappable=map,cax=None,ax=None,shrink=0.5)
+        # plt.colorbar(mappable=map,cax=None,ax=None,shrink=1)
         # plt.show()
 
     def visual_iter_process(self):
@@ -160,4 +162,71 @@ class QLearningVisual:
 
         # 设置刻度标记的大小
         plt.tick_params(axis='both', labelsize=14)
+        plt.show()
+
+    def visual_state_action(self, q_dict):
+        """This method visualizes the state_action pair lively, with the red arrow
+            referring to the maximum Q_value state_action pair."""
+        plt.figure(dpi=220, figsize=(7, 7))
+        ax = plt.axes()
+        ax.set(xlim=[0, 10], ylim=[0, 10])
+
+        ax.xaxis.set_major_locator(plt.MultipleLocator(1.0))  # 设置x主坐标间隔 1
+        ax.yaxis.set_major_locator(plt.MultipleLocator(1.0))  # 设置y主坐标间隔 1
+        ax.grid(True, linestyle="-", color="0.6", linewidth="1")
+        ax.scatter(8.5, 7.5)
+
+        keys = sorted(q_dict.keys())
+        x, y, i = 0.5, 9.5, 1
+        for key in keys:
+            # print("key: " + str(key))
+            if key == 28:
+                i = i + 1
+                x = x + 1
+                continue
+
+            while key != i - 1:
+                i = i + 1
+                x = x + 1
+                if x == 10.5:
+                    x = 0.5
+                    y = y - 1
+
+            if q_dict[key].index(np.max(q_dict[key])) == 0:
+                plt.annotate('', xy=(x - 0.5, y), xytext=(x, y),
+                             arrowprops=dict(arrowstyle="->", connectionstyle="arc3", color='red'))
+            else:
+                plt.annotate('', xy=(x - 0.5, y), xytext=(x, y),
+                             arrowprops=dict(arrowstyle="->", connectionstyle="arc3"))
+
+            if q_dict[key].index(np.max(q_dict[key])) == 1:
+                plt.annotate('', xy=(x, y + 0.5), xytext=(x, y),
+                             arrowprops=dict(arrowstyle="->", connectionstyle="arc3", color='red'))
+            else:
+                plt.annotate('', xy=(x, y + 0.5), xytext=(x, y),
+                             arrowprops=dict(arrowstyle="->", connectionstyle="arc3"))
+
+            if q_dict[key].index(np.max(q_dict[key])) == 2:
+                plt.annotate('', xy=(x + 0.5, y), xytext=(x, y),
+                             arrowprops=dict(arrowstyle="->", connectionstyle="arc3", color='red'))
+            else:
+                plt.annotate('', xy=(x + 0.5, y), xytext=(x, y),
+                             arrowprops=dict(arrowstyle="->", connectionstyle="arc3"))
+
+            if q_dict[key].index(np.max(q_dict[key])) == 3:
+                plt.annotate('', xy=(x, y - 0.5), xytext=(x, y),
+                             arrowprops=dict(arrowstyle="->", connectionstyle="arc3", color='red'))
+            else:
+                plt.annotate('', xy=(x, y - 0.5), xytext=(x, y),
+                             arrowprops=dict(arrowstyle="->", connectionstyle="arc3"))
+
+            x = x + 1
+            if x == 10.5:
+                x = 0.5
+                y = y - 1
+            i = i + 1
+
+        # 设置刻度标记的大小
+        plt.tick_params(axis='both', labelsize=10)
+
         plt.show()

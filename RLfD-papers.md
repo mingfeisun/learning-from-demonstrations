@@ -4,6 +4,8 @@
 * Created: 2018-08-06
 * Updated: 2018-08-10
 
+Credit from [CS395-T: Robot Learning from Demonstration and Interaction](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/desc.php)
+
 Overview of the field and detailed classification of related paper in the corresponding repository.
 
 ### Domain overview
