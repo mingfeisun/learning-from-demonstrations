@@ -18,6 +18,7 @@ Related work of RLfD in ICRA proceedings from 2015 ~ 2017.
     - 偏理论分析
     
 * [Deep Reinforcement Learning for Robotic Manipulation with Asynchronous Off-Policy Updates](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7989385)
+
     **Key Word: Deep Reinforcement Learning**
     
 * [Reset-Free Guided Policy Search: Efficient Deep Reinforcement Learning with Stochastic Initial States](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7989383)
