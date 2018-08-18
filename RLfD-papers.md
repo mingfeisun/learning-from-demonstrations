@@ -2,9 +2,7 @@
 
 * Author: Ziming Chen
 * Created: 2018-08-06
-* Updated: 2018-08-10
-
-Credit from [CS395-T: Robot Learning from Demonstration and Interaction](http://www.cs.utexas.edu/~sniekum/classes/RLFD-F16/desc.php)
+* Updated: 2018-08-17
 
 Overview of the field and detailed classification of related paper in the corresponding repository.
 
@@ -278,6 +276,10 @@ Overview of the field and detailed classification of related paper in the corres
     IEEE International Conference on Robotics and Automation, 2015\.
 
 ### Active learning I
+
+* [Active Learning](https://www.morganclaypool.com/doi/pdf/10.2200/S00429ED1V01Y201207AIM018)
+
+    Settles, Burr. "Active learning." Synthesis Lectures on Artificial Intelligence and Machine Learning 6.1 (2012): 1-114.
 
 * [Designing Interactions for Robot Active Learners](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5471105) ***
 
