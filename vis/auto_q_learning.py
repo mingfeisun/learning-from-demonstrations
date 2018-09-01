@@ -4,13 +4,25 @@ import numpy as np
 
 from q_learning_model import QLearningModel
 from q_learning_visualization import QLearningVisual
+from QLambdaLearningModel import QLambdaLearningModel
 
-map = [[1, 0, 3, 0, 3, 0, 0, 0, 0, 0],
-       [0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
-       [0, 0, 3, 0, 0, 0, 3, 0, 2, 0],
-       [0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
-       [0, 0, 0, 0, 3, 0, 0, 3, 0, 0],
-       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+# map = [[1, 0, 3, 0, 3, 0, 0, 0, 0, 0],
+#        [0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
+#        [0, 0, 3, 0, 0, 0, 3, 0, 2, 0],
+#        [0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
+#        [0, 0, 0, 0, 3, 0, 0, 3, 0, 0],
+#        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#        [0, 3, 0, 0, 0, 3, 0, 0, 0, 0],
+#        [0, 0, 0, 0, 0, 0, 0, 3, 0, 0],
+#        [0, 0, 0, 0, 3, 0, 0, 0, 0, 0],
+#        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+map = [[1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 3, 0, 3, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0, 0, 3, 0, 0, 0],
+       [3, 0, 3, 0, 3, 0, 0, 0, 0, 0],
+       [0, 0, 0, 3, 0, 0, 0, 3, 0, 0],
+       [0, 0, 3, 2, 0, 0, 0, 0, 0, 0],
        [0, 3, 0, 0, 0, 3, 0, 0, 0, 0],
        [0, 0, 0, 0, 0, 0, 0, 3, 0, 0],
        [0, 0, 0, 0, 3, 0, 0, 0, 0, 0],
@@ -22,8 +34,8 @@ REACH_GOAL = 2
 OK_TO_GO = 3
 
 REWARD_COLLISION = -3
-REWARD_MOVE = -1
-REWARD_GOAL = 1
+REWARD_MOVE = -0.5
+REWARD_GOAL = 15
 REWARD_NOT_READY = 0
 
 
@@ -34,11 +46,13 @@ class QLearningTest:
         """initialize QLearningModel and transfer a list to parameter @actions in __init__
                 0: left, 1: up, 2: right, 3: down"""
 
+        # self.learning_model = QLambdaLearningModel([0, 1, 2, 3])
         self.learning_model = QLearningModel([0, 1, 2, 3])
-        self.iteration_num = 60
+        self.iteration_num = 50
         self.iterations = []
         self.performances = []
-        self.q_learning(self.learning_model, self.iteration_num, self.iterations, self.performances)
+        self.avg_accu_reward = []
+        self.q_learning(self.learning_model, self.iteration_num, self.iterations, self.performances, self.avg_accu_reward)
 
     def action_to_goal(self, _action, curr_state):
         """get target state of the current action"""
@@ -130,12 +144,11 @@ class QLearningTest:
         init_pos[1] = dst_pos
         return init_pos
 
-    def q_learning(self, learning_model, iteration_num, iterations, performances):
+    def q_learning(self, learning_model, iteration_num, iterations, performances, avg_accu_reward):
         """This method is used to iteratively run Q_learning model and get final result"""
 
         beg_pos = self.get_init_pos()[0]
         dst_pos = self.get_init_pos()[1]
-
 
         for i in range(iteration_num):
             count_actions = 0
@@ -160,19 +173,31 @@ class QLearningTest:
                 count_actions = count_actions + 1   # 计算总共花费的actions（也可以用cumulative reward？跟游戏本身规则相关）
 
                 # self.visualization(next_state)    # 实时可视化每一次探索的状况
+
+            # learning_model.complete_one_episode()
             iterations.append(i)
             performances.append(count_actions)
+            avg_accu_reward.append(self.cal_avg_accu_reward(learning_model.q_table))
 
             print("Reach goal!! Actions taken:" + str(count_actions))
             print("Trajectory: " + str(next_state))
 
         self.visualization(next_state)  # 实时可视化每一轮成功探索后的状况
 
+    def cal_avg_accu_reward(self, q_table_dict):
+        max_q_value = []
+        keys = q_table_dict.keys()
+        for key in keys:
+             max_q_value.append(np.max(q_table_dict[key]))
+
+        return np.average(max_q_value)
+  
 
     def visualization(self, trajectory_state):
-        vis = QLearningVisual(self.learning_model.q_table, self.iterations, self.performances)
-        vis.visual_iter_process()
-        vis.visual_heatmap(trajectory_state)
+        vis = QLearningVisual(self.learning_model.q_table, self.iterations, self.performances, self.avg_accu_reward)
+        vis.performance_iter_process()
+        vis.reward_iter_process()
+        # vis.visual_heatmap(trajectory_state)
         vis.visual_state_action(self.learning_model.q_table)
 
 
