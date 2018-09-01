@@ -16,12 +16,15 @@ import pandas as pd
 
 
 class QLearningVisual:
-    """Heatmap for visualizing the middle learning process of Q-learning and the final policy"""
+    """This class is for visualizing the training process 
+    from several different aspects"""
 
-    def __init__(self, q_table_dict, iterations, performances):
+    def __init__(self, q_table_dict, goal_state, iterations, performances, avg_accu_reward):
         self.q_table_dict = q_table_dict
+        self.goal_state = goal_state
         self.iterations = iterations
         self.performances = performances
+        self.avg_accu_reward = avg_accu_reward
         self.final_q_table = self.final_q_table_list(self.q_table_dict)
 
     def final_q_table_list(self, q_table_dict):
@@ -61,6 +64,7 @@ class QLearningVisual:
         return list
 
     def visual_heatmap(self, trajectory_state):
+        """Heatmap for visualizing the middle learning process of Q-learning and the final policy"""
 
         list = self.final_q_table
         xpos = np.arange(0, 10, 1)
@@ -92,16 +96,16 @@ class QLearningVisual:
         opacity = 1
 
         for i in range(100):
-            # if [xpos[i], ypos[i]] in trajectory_state:
-            #     ax.bar3d(xpos[i], ypos[i], zpos[i], dx[i], dy[i], dz[i],
-            #             color='b', alpha=opacity, zsort='max')
-            # else:
-            #     ax.bar3d(xpos[i], ypos[i], zpos[i], dx[i], dy[i], dz[i],
-            #              color='w', alpha=opacity, zsort='max')
+            if [xpos[i], ypos[i]] in trajectory_state:
+                ax.bar3d(xpos[i], ypos[i], zpos[i], dx[i], dy[i], dz[i],
+                        color='b', alpha=opacity, zsort='max')
+            else:
+                ax.bar3d(xpos[i], ypos[i], zpos[i], dx[i], dy[i], dz[i],
+                         color='w', alpha=opacity, zsort='max')
 
-            ax.bar3d(xpos[i], ypos[i], zpos[i], dx[i], dy[i], dz[i],
-                     color=colorVals[sorted(dz).index(dz[i])], alpha=opacity, zsort='max')
-            print(xpos[i], ypos[i], zpos[i], dx[i], dy[i], dz[i])
+            # ax.bar3d(xpos[i], ypos[i], zpos[i], dx[i], dy[i], dz[i],
+            #          color=colorVals[sorted(dz).index(dz[i])], alpha=opacity, zsort='max')
+            # print(xpos[i], ypos[i], zpos[i], dx[i], dy[i], dz[i])
 
         scalarMap.set_array(10)
         cb = fig.colorbar(scalarMap)
@@ -151,8 +155,8 @@ class QLearningVisual:
         # plt.colorbar(mappable=map,cax=None,ax=None,shrink=1)
         # plt.show()
 
-    def visual_iter_process(self):
-        """This method visualizes the training process of q_learning"""
+    def performance_iter_process(self):
+        """This method visualizes the performance in the training process of q_learning"""
         plt.plot(self.iterations, self.performances, linewidth=5)  # 参数linewidth决定plot()绘制的线条的粗细
 
         # 设置图标标题，并给坐标轴加上标签
@@ -164,9 +168,24 @@ class QLearningVisual:
         plt.tick_params(axis='both', labelsize=14)
         plt.show()
 
-    def visual_state_action(self, q_dict):
+    def reward_iter_process(self):
+        """This method visualizes the accumulated reward in the training process of q_learning"""
+        plt.plot(self.iterations, self.avg_accu_reward, linewidth=5)  # 参数linewidth决定plot()绘制的线条的粗细
+
+        # 设置图标标题，并给坐标轴加上标签
+        plt.title("Training process", fontsize=24)
+        plt.xlabel("Iteration number", fontsize=14)
+        plt.ylabel("Average accumulative reward", fontsize=14)
+
+        # 设置刻度标记的大小
+        plt.tick_params(axis='both', labelsize=14)
+        plt.show()
+
+    def visual_state_action(self):
         """This method visualizes the state_action pair lively, with the red arrow
             referring to the maximum Q_value state_action pair."""
+
+        q_dict = self.q_table_dict
         plt.figure(dpi=220, figsize=(7, 7))
         ax = plt.axes()
         ax.set(xlim=[0, 10], ylim=[0, 10])
@@ -174,23 +193,32 @@ class QLearningVisual:
         ax.xaxis.set_major_locator(plt.MultipleLocator(1.0))  # 设置x主坐标间隔 1
         ax.yaxis.set_major_locator(plt.MultipleLocator(1.0))  # 设置y主坐标间隔 1
         ax.grid(True, linestyle="-", color="0.6", linewidth="1")
-        ax.scatter(8.5, 7.5)
+        # ax.scatter(8.5, 7.5)
 
-        keys = sorted(q_dict.keys())
+        keys = sorted(self.q_table_dict.keys())
         x, y, i = 0.5, 9.5, 1
         for key in keys:
             # print("key: " + str(key))
-            if key == 28:
-                i = i + 1
-                x = x + 1
-                continue
-
             while key != i - 1:
                 i = i + 1
                 x = x + 1
                 if x == 10.5:
                     x = 0.5
                     y = y - 1
+
+            if key == self.goal_state:
+                ax.scatter(x, y)
+                i = i + 1
+                x = x + 1
+                continue
+
+            if np.average(q_dict[key]) == 0:
+                i = i + 1
+                x = x + 1
+                if x == 10.5:
+                    x = 0.5
+                    y = y - 1
+                continue
 
             if q_dict[key].index(np.max(q_dict[key])) == 0:
                 plt.annotate('', xy=(x - 0.5, y), xytext=(x, y),
