@@ -4,7 +4,7 @@ import numpy as np
 
 from q_learning_model import QLearningModel
 from q_learning_visualization import QLearningVisual
-from QLambdaLearningModel import QLambdaLearningModel
+from q_lambda_naive_model import QLambdaLearningModel
 
 # map = [[1, 0, 3, 0, 3, 0, 0, 0, 0, 0],
 #        [0, 0, 3, 0, 0, 0, 0, 0, 0, 0],
@@ -46,8 +46,8 @@ class QLearningTest:
         """initialize QLearningModel and transfer a list to parameter @actions in __init__
                 0: left, 1: up, 2: right, 3: down"""
 
-        # self.learning_model = QLambdaLearningModel([0, 1, 2, 3])
-        self.learning_model = QLearningModel([0, 1, 2, 3])
+        self.learning_model = QLambdaLearningModel([0, 1, 2, 3])
+        # self.learning_model = QLearningModel([0, 1, 2, 3])
         self.iteration_num = 50
         self.iterations = []
         self.performances = []
@@ -174,7 +174,7 @@ class QLearningTest:
 
                 # self.visualization(next_state)    # 实时可视化每一次探索的状况
 
-            # learning_model.complete_one_episode()
+            learning_model.complete_one_episode()
             iterations.append(i)
             performances.append(count_actions)
             avg_accu_reward.append(self.cal_avg_accu_reward(learning_model.q_table))
@@ -182,23 +182,21 @@ class QLearningTest:
             print("Reach goal!! Actions taken:" + str(count_actions))
             print("Trajectory: " + str(next_state))
 
-        self.visualization(next_state)  # 实时可视化每一轮成功探索后的状况
+        self.visualization(next_state, self.state_to_key(dst_pos))  # 实时可视化每一轮成功探索后的状况
 
     def cal_avg_accu_reward(self, q_table_dict):
         max_q_value = []
         keys = q_table_dict.keys()
         for key in keys:
              max_q_value.append(np.max(q_table_dict[key]))
-
         return np.average(max_q_value)
-  
 
-    def visualization(self, trajectory_state):
-        vis = QLearningVisual(self.learning_model.q_table, self.iterations, self.performances, self.avg_accu_reward)
+    def visualization(self, trajectory_state, goal_state):
+        vis = QLearningVisual(self.learning_model.q_table, goal_state, self.iterations, self.performances, self.avg_accu_reward)
         vis.performance_iter_process()
         vis.reward_iter_process()
         # vis.visual_heatmap(trajectory_state)
-        vis.visual_state_action(self.learning_model.q_table)
+        vis.visual_state_action()
 
 
 test = QLearningTest()
