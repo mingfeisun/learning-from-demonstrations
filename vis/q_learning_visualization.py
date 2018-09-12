@@ -16,7 +16,7 @@ import pandas as pd
 
 
 class QLearningVisual:
-    """This class is for visualizing the training process 
+    """This class is for visualizing the training process
     from several different aspects"""
 
     def __init__(self, q_table_dict, goal_state, iterations, performances, avg_accu_reward):
@@ -32,7 +32,7 @@ class QLearningVisual:
             transfer it to the final q_table list, which is a 2-dimensional matrix,
             with each value the maximal q_value of the corresponding state"""
 
-        print(q_table_dict)
+        # print(q_table_dict)
 
         keys = sorted(q_table_dict.keys())
         # print(keys)
@@ -40,7 +40,7 @@ class QLearningVisual:
         list = [[0.0000] * 10 for i in range(0, 10)]
         i, j = 0, 0
         for key in keys:
-            while key != i * 10 + j:
+            while key != (i, j):
                 j = j + 1
                 if j == 10:
                     j = 0
@@ -48,7 +48,7 @@ class QLearningVisual:
             if np.average(q_table_dict[key]) == 0:
                 list[i][j] = 0
             else:
-                list[i][j] = round(np.max(q_table_dict[key])+3, 6)
+                list[i][j] = round(np.max(q_table_dict[key]), 6)
             j = j + 1
             if j == 10:
                 j = 0
@@ -195,11 +195,11 @@ class QLearningVisual:
         ax.grid(True, linestyle="-", color="0.6", linewidth="1")
         # ax.scatter(8.5, 7.5)
 
-        keys = sorted(self.q_table_dict.keys())
+        keys = sorted(q_dict.keys())
         x, y, i = 0.5, 9.5, 1
         for key in keys:
             # print("key: " + str(key))
-            while key != i - 1:
+            while key[0]*10 + key[1] != i - 1:
                 i = i + 1
                 x = x + 1
                 if x == 10.5:
