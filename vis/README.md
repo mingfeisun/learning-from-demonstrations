@@ -56,12 +56,15 @@
   可视化state_action pair， 调用vis.visual_state_action()
   
   可视化num_reach_goal, 首先
+  
       1. 创建对象 self.num_reach_goal = num_reach_goal.NumReachGoal()
+      
       2. 调用方法 self.num_reach_goal.try_reach_goal(learning_model.q_table, self.avg_actions, self.num_of_states) 在每一次iteration结束之后，调用方法try_reach_goal(),传入q_table, avg_actions(list)和num_of_states(list)，该方法会将当前q_table中能到达goal的数量以及平均花费的actions存到这两个list里。
+      
       3. 在所有iteration结束之后，调用以下三个方法
         * self.num_reach_goal.show_num_of_states(iterations, self.num_of_states)
         * self.num_reach_goal.show_avg_actions(iterations, self.avg_actions)
         * self.num_reach_goal.show_total_actions(iterations, self.num_of_states, self.avg_actions)
 
-      可以显示迭代过程中到达goal的states数量的变化，average actions的变化，total actions的变化。
+  可以显示迭代过程中到达goal的states数量的变化，average actions的变化，total actions的变化。
 
