@@ -6,14 +6,14 @@ from collections import defaultdict
 # code source: https://github.com/rlcode/reinforcement-learning/blob/master/1-grid-world/5-q-learning/q_learning_agent.py
 
 
-class QLambdaLearningModel:
+class QLambdaNaiveModel:
 
     def __init__(self, actions):
         # actions = [0, 1, 2, 3]
         self.actions = actions
         self.learning_alpha = 0.5
         self.discount_lambda = 0.9
-        self.e_lambda = 0.5
+        self.e_lambda = 0.9
         self.epsilon = 0.5
         self.anneal_decay = 0.0
         self.q_table = defaultdict(lambda: [0.0, 0.0, 0.0, 0.0])
@@ -37,16 +37,17 @@ class QLambdaLearningModel:
         keys = sorted(self.q_table.keys())
         # print(self.q_table)
 
-        for i in range(10):
-            for j in range(10):
-                key = i * 10 + j
+        # for i in range(10):
+        #     for j in range(10):
+        #         key = i * 10 + j
+        for key in keys:
                 for tmp_action in range(4):
                     self.q_table[key][tmp_action] += self.learning_alpha * delta * self.eligibility_traces[key][tmp_action]
                     # rospy.loginfo("q table for state (%s) and action (%s): %f"%(str(tmp_state), str(tmp_action), self.q_table[tmp_state][tmp_action]))
-                    # if action == best_action:
-                    self.eligibility_traces[key][tmp_action] *= self.discount_lambda * self.e_lambda
-                    # else:
-                    #     self.eligibility_traces[key][tmp_action] = 0
+                    if action == best_action:
+                        self.eligibility_traces[key][tmp_action] *= self.discount_lambda * self.e_lambda
+                    else:
+                        self.eligibility_traces[key][tmp_action] = 0
                     # rospy.loginfo("eligibility traces for state (%s) and action (%s): %f"%(str(tmp_state), str(tmp_action), self.eligibility_traces[tmp_state][tmp_action]))
 
         # self.flush_freq += 1
