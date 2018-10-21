@@ -1,4 +1,4 @@
-# RobotLearningFromDemonstration
+# Awesome Robot Learning from Demonstration (RLfD)
 * Mingfei Sun
 * Created: 2018-07-23
 * Updated: 2018-07-23
